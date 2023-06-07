@@ -42,7 +42,7 @@ playButton.addEventListener("click", () => {
         
     
         cell.addEventListener('click', () =>  {
-            cell.classList.add('clicked');
+            cell.classList.toggle('clicked');
         });
         grid.appendChild(cell);
     }
