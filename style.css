@@ -47,7 +47,7 @@ main {
     margin: 60px auto;
     display: flex;
     flex-wrap: wrap;
-    border: 2px dashed white;;
+    border: 2px dashed aquamarine;;
 }
 
 .cell {
@@ -56,11 +56,12 @@ main {
     border: 2px solid black;
     cursor: pointer;
     display: flex;
+    justify-content: center;
     align-items: center;
     color: black;
 
 }
 
 .cell.clicked {
-    background-color: red;
+    background-color: lightblue;
 }
