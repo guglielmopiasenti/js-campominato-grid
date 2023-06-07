@@ -17,7 +17,7 @@
 
 .navbar {
     height: 80px;
-    padding: 20px 0;
+    line-height: 80px;
 }
 
 nav {
@@ -25,8 +25,14 @@ nav {
     justify-content: space-between;
 }
 
+.nav-title {
+    display: flex;
+    align-items: center;
+}
+
 .buttons-container {
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 
