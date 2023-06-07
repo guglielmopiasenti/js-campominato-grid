@@ -1,9 +1,9 @@
 console.log("JS OK!");
 
-// targeting button element in the DOM
+// 1 targeting button element in the DOM
 const playButton = document.getElementById("play-btn");
 
-// adding event listener to play button
+// 1a adding event listener to play button
 playButton.addEventListener("click", () => {
 
     // # Functions section
