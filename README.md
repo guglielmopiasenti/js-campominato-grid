@@ -38,7 +38,8 @@ Add a select next to the build button, which provides a choice of three differen
    2b. create the grid with for loop and appendChild.
    2c. Adding a function to create the cell.
    2d. Number the grid with a function.
-3. Numbers appear inside of the cells when clicked on:
-   3a.
-   3b.
-4. when clicking on a cell, the color changes (CSS).
+3. Numbers appear inside of the cells when clicked on. (CSS).
+4. When clicking on a cell, the color changes (CSS).
+5. Adding select button with level of difficulty.
+   5a. Targeting elements from the DOM adding .value attribute.
+   5b. if cycle to toggle level of difficulty.
