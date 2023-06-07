@@ -38,4 +38,7 @@ Add a select next to the build button, which provides a choice of three differen
    2b. create the grid with for loop and appendChild.
    2c. Adding a function to create the cell.
    2d. Number the grid with a function.
-3.
+3. Numbers appear inside of the cells when clicked on:
+   3a.
+   3b.
+4. when clicking on a cell, the color changes (CSS).
