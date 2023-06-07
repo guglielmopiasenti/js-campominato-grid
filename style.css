@@ -38,4 +38,15 @@ nav {
 
 main {
     background-color: aquamarine;
+    padding: 50px 0px;
+}
+
+#grid {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px dashed white;;
 }
