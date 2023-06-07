@@ -28,3 +28,12 @@ Add a select next to the build button, which provides a choice of three differen
 - with difficulty 1 => 100 boxes, with a number between 1 and 100, divided into 10 boxes by 10 rows;
 - with difficulty 2 => 81 boxes, with a number between 1 and 81, divided into 9 boxes for 9 rows;
 - with difficulty 3 => 49 boxes, with a number between 1 and 49, divided into 7 boxes for 7 rows;
+
+# Procedure
+
+1. I target the play button in the DOM
+   1a. I create an event listener for the button click so to start the game.
+2. Creating the grid:
+   2a. Targeting the chosen element in the DOM.
+   2b. create the grid with
+3.
