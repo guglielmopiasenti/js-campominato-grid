@@ -35,5 +35,7 @@ Add a select next to the build button, which provides a choice of three differen
    1a. I create an event listener for the button click so to start the game.
 2. Creating the grid:
    2a. Targeting the chosen element in the DOM.
-   2b. create the grid with
+   2b. create the grid with for loop and appendChild.
+   2c. Adding a function to create the cell.
+   2d. Number the grid with a function.
 3.
