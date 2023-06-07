@@ -50,3 +50,14 @@ main {
     flex-wrap: wrap;
     border: 2px dashed white;;
 }
+
+.cell {
+    height: calc(100% / 10);
+    flex-basis: calc(100% / 10);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.cell.clicked {
+    
+}
