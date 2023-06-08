@@ -41,5 +41,5 @@ Color all bomb cells when the game ends
 
 1. Preparing the score:
    1a. I get the score element from the DOM.
-   1b. I create a 'for' cicle to increase the score at every click.
-   1c.
+   1b. I include in the event listener the score increase at every click.
+   1c. I use an if condition to block the cell click after it has been clicked once.

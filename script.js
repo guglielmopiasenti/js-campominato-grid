@@ -64,6 +64,7 @@ playButton.addEventListener("click", () => {
       scoreContainer.innerHTML = "Score: " + score;
 
       // if condition to determine whether the click already happened or not.
+      if (cell.classList.contains("clicked")) return;
     });
     grid.appendChild(cell);
   }

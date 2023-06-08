@@ -68,6 +68,7 @@ main {
 
 .cell.clicked {
     background-color: lightblue;
+    cursor: not-allowed;
 }
 
 footer {
