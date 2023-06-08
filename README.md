@@ -1,45 +1,36 @@
-# Delivery
+# GAME DESCRIPTION
 
-The user clicks on a button which will generate a square game grid.
-Each cell has a progressive number, from 1 to 100.
-There will then be 10 boxes for each of the 10 rows.
-When the user clicks on each cell, the clicked cell turns blue and I issue a message in the console with the number of the clicked cell.
+The computer must generate 16 random numbers in the same range as the chosen difficulty: bombs. Warning: a maximum of one bomb can be placed in the same cell, so no two bombs can have the same number
+Then the user clicks on a cell: if the number is present in the list of generated numbers we have stepped on a bomb. The cell turns red and the game ends. Otherwise, the clicked cell turns blue and the user can continue clicking on the other cells.
+The game ends when the player clicks on a bomb or when he reaches the maximum possible number of numbers allowed (ie when he has revealed all cells that are not bombs).
+At the end of the game, the software must communicate the score, i.e. the number of times the user has clicked on a cell that was not a bomb
 
-# MILESTONE 1
+## MILESTONE 1
 
-Let's prepare the HTML and the CSS to get the graphic result we see in the attached image.
+We prepare "Something" to keep score of the user.
+When the user clicks on a cell, we increment the score.
+If we succeed, we also make sure that we can no longer click on the same cell
 
-# MILESTONE 2
+## MILESTONE 2
 
-We remove the cells that we have inserted in the HTML in order to generate them through JS. At the click of the play button, 100 cells are generated in 10 rows of 10 cells each.
+Let's generate 16 random numbers (all different) between 1 and the maximum number of boxes available.
+Let's generate them and print them in the console to be sure they are correct
 
-# MILESTONE 3
+## MILESTONE 3
 
-In each cell, the corresponding number must appear, in order from 1 to 100;
+When the user clicks on a cell, we check if he has stepped on a bomb, by checking if the cell number is present in the bomb array.
+If yes, the cell turns red (we collect the score and write in the console that the patient ends) otherwise it turns blue and we have to increase the score.
+#MILESTONE 4
+When the user clicks on a cell, and this is not a bomb, we have to check if the increased score has reached the maximum score, because in that case the game ends. We then collect the message and write an appropriate message.
+#MILESTONE 5
+When the game ends we have to figure out if it ended because a bomb was clicked or if the user reached the maximum score (ie he won). We must then in any case print the score achieved on the page and the appropriate message in case of victory or defeat.
 
-# MILESTONE 4
+## BONUSES
 
-When you click on the cell, we print the number of the cell clicked in the console, then we color the cell light blue!
+Add a select next to the build button, providing a choice of three different difficulty levels (same as yesterday's instructions if not already done)
 
-# BONUSES
+### SUPERBONUS
 
-Add a select next to the build button, which provides a choice of three different difficulty levels:
+Color all bomb cells when the game ends
 
-- with difficulty 1 => 100 boxes, with a number between 1 and 100, divided into 10 boxes by 10 rows;
-- with difficulty 2 => 81 boxes, with a number between 1 and 81, divided into 9 boxes for 9 rows;
-- with difficulty 3 => 49 boxes, with a number between 1 and 49, divided into 7 boxes for 7 rows;
-
-# Procedure
-
-1. I target the play button in the DOM
-   1a. I create an event listener for the button click so to start the game.
-2. Creating the grid:
-   2a. Targeting the chosen element in the DOM.
-   2b. create the grid with for loop and appendChild.
-   2c. Adding a function to create the cell.
-   2d. Number the grid with a function.
-3. Numbers appear inside of the cells when clicked on. (CSS).
-4. When clicking on a cell, the color changes (CSS).
-5. Adding select button with level of difficulty.
-   5a. Targeting elements from the DOM adding .value attribute.
-   5b. if cycle to toggle level of difficulty.
+# PROCEDURE
