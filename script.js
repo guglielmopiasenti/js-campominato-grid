@@ -26,6 +26,20 @@ playButton.addEventListener("click", () => {
     return cell;
   };
 
+  // establishing function for bomb generation
+  function generateBombs(numberOfBombs, maxNumber) {
+    let bombs = [];
+
+    while (bombs.length < numberOfBombs) {
+      let randomNumber;
+      do {
+        randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+      } while (bombs.includes(randomNumber));
+      bombs.push(randomNumber);
+    }
+    return bombs;
+  }
+
   //* Initial operations
 
   // 2a Getting elements from the DOM
@@ -50,6 +64,16 @@ playButton.addEventListener("click", () => {
   // Getting the score element from the DOM
   let scoreContainer = document.getElementById("score");
   let score = 0;
+
+  // setting bomb number
+  const totalBombs = 16;
+
+  // preparing container for bombs
+  const bombs = generateBombs(totalBombs, totalCells);
+  console.log(bombs);
+
+  // establishing max score
+  const maxScore = totalCells - totalBombs;
 
   // 2b we render the cells
   for (let i = 1; i <= totalCells; i++) {

@@ -43,3 +43,8 @@ Color all bomb cells when the game ends
    1a. I get the score element from the DOM.
    1b. I include in the event listener the score increase at every click.
    1c. I use an if condition to block the cell click after it has been clicked once.
+2. Bombs section:
+   2a. I prepare a container for the bombs.
+   2b. I set the number of bombs.
+   2c. I establish the maximum score.
+   2d. I establish a function to generate bombs.
