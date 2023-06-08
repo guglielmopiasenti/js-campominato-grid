@@ -56,11 +56,14 @@ playButton.addEventListener("click", () => {
     const cell = createCell(i);
 
     cell.addEventListener("click", () => {
-      cell.classList.toggle("clicked");
+      cell.classList.add("clicked");
 
       // increase the score at every click
       score = score + 1;
       console.log(score);
+      scoreContainer.innerHTML = "Score: " + score;
+
+      // if condition to determine whether the click already happened or not.
     });
     grid.appendChild(cell);
   }
