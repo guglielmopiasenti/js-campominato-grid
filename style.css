@@ -64,11 +64,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aquamarine;
-
 }
 
 .cell.clicked {
     background-color: lightblue;
-    color: black;
+}
+
+footer {
+    height: 50px;
+    line-height: 50px;
 }
