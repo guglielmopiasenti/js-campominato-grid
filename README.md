@@ -20,9 +20,13 @@ Let's generate them and print them in the console to be sure they are correct
 
 When the user clicks on a cell, we check if he has stepped on a bomb, by checking if the cell number is present in the bomb array.
 If yes, the cell turns red (we collect the score and write in the console that the patient ends) otherwise it turns blue and we have to increase the score.
-#MILESTONE 4
+
+## MILESTONE 4
+
 When the user clicks on a cell, and this is not a bomb, we have to check if the increased score has reached the maximum score, because in that case the game ends. We then collect the message and write an appropriate message.
-#MILESTONE 5
+
+## MILESTONE 5
+
 When the game ends we have to figure out if it ended because a bomb was clicked or if the user reached the maximum score (ie he won). We must then in any case print the score achieved on the page and the appropriate message in case of victory or defeat.
 
 ## BONUSES
@@ -34,3 +38,8 @@ Add a select next to the build button, providing a choice of three different dif
 Color all bomb cells when the game ends
 
 # PROCEDURE
+
+1. Preparing the score:
+   1a. I get the score element from the DOM.
+   1b. I create a 'for' cicle to increase the score at every click.
+   1c.

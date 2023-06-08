@@ -60,4 +60,8 @@ playButton.addEventListener("click", () => {
         });
         grid.appendChild(cell);
     }
+
+  // Getting the score element from the DOM
+  
+
 });
