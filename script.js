@@ -85,10 +85,23 @@ playButton.addEventListener("click", () => {
       // increase the score at every click
       score = score + 1;
       console.log(score);
-      scoreContainer.innerHTML = "Score: " + score;
 
       // if condition to determine whether the click already happened or not.
       if (cell.classList.contains("clicked")) return;
+
+      // bomb click control
+      const bombClicked = bombs.includes(i);
+
+      // bomb click control
+      if (bombClicked) {
+        cell.classList.add("bomb");
+
+        // player loose
+        console.log("player loose");
+      } else {
+        // increment the counter
+        scoreContainer.innerHTML = "Score: " + score;
+      }
     });
     grid.appendChild(cell);
   }

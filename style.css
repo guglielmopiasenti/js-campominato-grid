@@ -71,6 +71,10 @@ main {
     cursor: not-allowed;
 }
 
+.cell.clicked.bomb {
+    background-color: red;
+}
+
 footer {
     height: 50px;
     line-height: 50px;
