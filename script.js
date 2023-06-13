@@ -85,8 +85,6 @@ playButton.addEventListener("click", () => {
 
       cell.classList.add("clicked");
 
-      console.log("sono qui");
-
       // bomb click control
       const bombClicked = bombs.includes(i);
 
@@ -95,13 +93,17 @@ playButton.addEventListener("click", () => {
         cell.classList.add("bomb");
 
         // player loose
-        console.log("player loose");
+        console.log("player loose. Your total score is: " + score);
       } else {
         // increase the score at every click
         score = score + 1;
         console.log(score);
         // increment the counter
         scoreContainer.innerHTML = "Score: " + score;
+      }
+      // winner message
+      if (score === maxScore) {
+        console.log("YOU WIN!  Your score is: " + maxScore);
       }
     });
     grid.appendChild(cell);
