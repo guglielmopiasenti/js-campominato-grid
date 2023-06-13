@@ -48,3 +48,6 @@ Color all bomb cells when the game ends
    2b. I set the number of bombs.
    2c. I establish the maximum score.
    2d. I establish a function to generate bombs.
+3. Bomb section
+   3a I control if player clicked a bomb
+   3b I set an if condition to control the click on the bomb
