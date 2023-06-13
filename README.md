@@ -40,14 +40,38 @@ Color all bomb cells when the game ends
 # PROCEDURE
 
 1. Preparing the score:
-   1a. I get the score element from the DOM.
-   1b. I include in the event listener the score increase at every click.
-   1c. I use an if condition to block the cell click after it has been clicked once.
+   1a. Get the score element from the DOM.
+   1b. Include in the event listener the score increase at every click.
+   1c. Use an if condition to block the cell click after it has been clicked once.
+
 2. Bombs section:
-   2a. I prepare a container for the bombs.
-   2b. I set the number of bombs.
-   2c. I establish the maximum score.
-   2d. I establish a function to generate bombs.
-3. Bomb section
-   3a I control if player clicked a bomb
-   3b I set an if condition to control the click on the bomb
+   2a. Prepare a container for the bombs.
+   2b. Set the number of bombs.
+   2c. Establish the maximum score.
+   2d. Establish a function to generate bombs.
+
+3. Cell click handling:
+   3a. Check if the player clicked a bomb.
+   3b. Set an if condition to control the click on the bomb.
+   3c. If the player clicked a bomb: - Add the "bomb" class to the cell. - Log the player's total score. - Disable clicking on cells after losing. - Set the game over flag to true. - Call the `revealCells` function to color all bomb cells.
+   3d. If the player didn't click a bomb: - Increase the score at every click. - Log the current score. - Increment the counter displayed in the score container. - Check if the maximum score is reached. - If the maximum score is reached: - Log the winning message and the player's score. - Disable clicking on cells after winning. - Set the game over flag to true.
+
+4. Create and render cells:
+   4a. Create a cell element using the `createCell` function.
+   4b. Add a click event listener to the cell, calling the `handleClick` function.
+   4c. Append the cell to the grid element.
+
+5. Game initialization:
+   5a. Get the selected difficulty level from the DOM.
+   5b. Clear the existing grid by emptying the grid element.
+   5c. Initialize variables for rows and columns based on the selected difficulty.
+   5d. Calculate the total number of cells.
+   5e. Generate the bombs using the `generateBombs` function.
+   5f. Initialize the score and set it to zero.
+   5g. Initialize the game over flag and set it to false.
+
+6. Reveal cells function:
+   6a. Get all the cells using the `document.querySelectorAll` method.
+   6b. Iterate through each cell and add the "clicked" class.
+   6c. Check if the cell's number is included in the bombs array.
+   6d. If the cell is a bomb, add the "bomb" class to the cell.
