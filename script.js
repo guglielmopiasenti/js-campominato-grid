@@ -2,6 +2,7 @@ console.log("JS OK!");
 
 // 1 targeting button element in the DOM
 const playButton = document.getElementById("play-btn");
+const difficulty = document.getElementById("difficulty");
 
 // 1a adding event listener to play button
 playButton.addEventListener("click", () => {
@@ -40,12 +41,24 @@ playButton.addEventListener("click", () => {
     return bombs;
   }
 
+  // function to color all bombs
+  const revealCells = () => {
+    // we get the cells
+    const cells = document.querySelectorAll(".cell");
+    for (let i = 0; i < cells.length; i++) {
+      const cell = cells[i];
+      cell.classList.add("clicked");
+      const cellNumber = parseInt(cell.innerText);
+      if (bombs.includes(cellNumber)) cell.classList.add("bomb");
+    }
+  };
   //* Initial operations
 
   // 2a Getting elements from the DOM
   const grid = document.getElementById("grid");
 
   // preparing initial data
+  let rows, cols;
   if (selectedDifficulty === 1) {
     rows = 10;
     cols = 10;
@@ -75,11 +88,17 @@ playButton.addEventListener("click", () => {
   // establishing max score
   const maxScore = totalCells - totalBombs;
 
+  // Flag to track game status
+  let gameOver = false;
+
   // 2b we render the cells
   for (let i = 1; i <= totalCells; i++) {
     const cell = createCell(i);
 
-    cell.addEventListener("click", () => {
+    const handleClick = () => {
+      // Check if game is already over
+      if (gameOver) return;
+
       // if condition to determine whether the click already happened or not.
       if (cell.classList.contains("clicked")) return;
 
@@ -94,18 +113,41 @@ playButton.addEventListener("click", () => {
 
         // player loose
         console.log("player loose. Your total score is: " + score);
+        // Disable clicking on cells after losing
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach((cell) => {
+          cell.removeEventListener("click", handleClick);
+        });
+
+        // Set game over flag to true
+        gameOver = true;
+
+        // Reveal all bombs
+        revealCells();
       } else {
-        // increase the score at every click
+        // Increase the score at every click
         score = score + 1;
         console.log(score);
-        // increment the counter
+        // Increment the counter
         scoreContainer.innerHTML = "Score: " + score;
+
+        // Check if the maximum score is reached
+        if (score === maxScore) {
+          console.log("YOU WIN! Your score is: " + maxScore);
+          // Disable clicking on cells after winning
+          const cells = document.querySelectorAll(".cell");
+          cells.forEach((cell) => {
+            cell.removeEventListener("click", handleClick);
+          });
+
+          // Set game over flag to true
+          gameOver = true;
+        }
       }
-      // winner message
-      if (score === maxScore) {
-        console.log("YOU WIN!  Your score is: " + maxScore);
-      }
-    });
+    };
+
+    cell.addEventListener("click", handleClick);
+
     grid.appendChild(cell);
   }
 });
